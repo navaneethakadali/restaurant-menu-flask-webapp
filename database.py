@@ -12,7 +12,9 @@ class MenuItem(db.Model):
         return f"MenuItem'{self.name}','{self.description}','{self.price}','{self.category}')"
 class Message(db.Model):
     id=db.Column(db.Integer,primary_key=True)
+    name=db.Column(db.String(80),nullable=False)
+    phone=db.Column(db.String(50),nullable=False)
     content=db.Column(db.String(500),nullable=False)
     timestamp=db.Column(db.DateTime,default=datetime.utcnow)
     def __repr__(self):
-        return f"Message('{self.content}', '{self.timestamp}')"
+        return f"Message('{self.name}','{self.phone}', '{self.content}', '{self.timestamp}')"

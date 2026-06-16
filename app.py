@@ -49,9 +49,11 @@ def check():
     return result
 @app.route('/contact',methods=['POST'])
 def contact():
-    content=request.form['message']
+    name=request.form.get('name')
+    phone=request.form.get('phone')
+    content=request.form.get('message')
     if content:
-        new_message=Message(content=content)
+        new_message=Message(name=name,phone=phone,content=content)
         db.session.add(new_message)
         db.session.commit()
     return redirect(url_for('home'))
@@ -72,3 +74,4 @@ def home():
     return render_template('index.html',menu_items=menu_items)
 if __name__=='__main__':
     app.run(debug=True)
+    

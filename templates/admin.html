@@ -219,6 +219,8 @@
         <thead>
             <tr>
                 <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
                 <th>Message</th>
                 <th>Time</th>
             </tr>
@@ -227,6 +229,8 @@
             {% for msg in messages %}
             <tr>
                 <td>{{ msg.id }}</td>
+                <td>{{ msg.name }}</td>
+                <td>{{ msg.phone }}</td>
                 <td>{{ msg.content }}</td>
                 <td>{{ msg.timestamp.strftime('%d %b %Y, %I:%M %p') }}</td>
             </tr>

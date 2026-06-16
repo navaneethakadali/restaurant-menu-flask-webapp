@@ -168,6 +168,19 @@
     <form action="/contact" method="POST">
         
         <!-- name="message" = Flask reads this name -->
+         <input 
+            type="text" 
+            name="name" 
+            placeholder="Your Name"
+            required />
+        
+        <!-- Phone field -->
+        <input 
+            type="tel" 
+            name="phone" 
+            placeholder="Your Phone Number"
+            required />
+
         <textarea 
             name="message"
             cols="30" 
